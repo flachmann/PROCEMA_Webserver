@@ -26,26 +26,27 @@
 #include "config.h"
 #include "usart.h"
 #include "networkcard/enc28j60.h"
-//#include "networkcard/rtl8019.h"
 #include "stack.h"
 #include "timer.h"
 #include "wol.h"
-#include "httpd.h"
 #include "cmd.h"
-#include "telnetd.h"
 #include "ntp.h"
 #include "base64.h"
-#include "http_get.h"
-//#include "lcd.h"
-//#include "udp_lcd.h"
 #include "analog.h"
-//#include "camera/cam.h"
-//#include "camera/servo.h"
-//#include "sendmail.h"
 #include <avr/eeprom.h>
 
 #include "dhcpc.h"
 #include "dnsc.h"
+
+//#include "networkcard/rtl8019.h"
+//#include "camera/cam.h"
+//#include "camera/servo.h"
+//#include "sendmail.h"
+//#include "http_get.h"
+//#include "lcd.h"
+//#include "udp_lcd.h"
+//#include "telnetd.h"
+//#include "httpd.h"
 
 //----------------------------------------------------------------------------
 //Hier startet das Hauptprogramm
@@ -78,17 +79,19 @@ int main(void)
 
 	//Applikationen starten
 	stack_init();
-	httpd_init();
-	telnetd_init();
+//	httpd_init();
+//	telnetd_init();
 	
 	//Spielerrei mit einem LCD
-/*	#if USE_SER_LCD
+/*	
+	#if USE_SER_LCD
 	udp_lcd_init();
 	lcd_init();
 	lcd_clear();
 	back_light = 1;
 	lcd_print(0,0,"System Ready");
-	#endif	*/
+	#endif	
+*/
 
 	//Ethernetcard Interrupt enable
 	ETH_INT_ENABLE;
@@ -96,7 +99,8 @@ int main(void)
 	//Globale Interrupts einschalten
 	sei(); 
 	
-/*	#if USE_CAM
+/*	
+	#if USE_CAM
 		#if USE_SER_LCD
 		lcd_print(1,0,"CAMERA INIT");
 		#endif //USE_SER_LCD
@@ -107,7 +111,8 @@ int main(void)
 		back_light = 0;
 		lcd_print(1,0,"CAMERA READY");
 		#endif //USE_SER_LCD
-	#endif //USE_CAM				*/
+	#endif //USE_CAM			
+*/
 
     #if USE_DHCP
     dhcp_init();
@@ -167,9 +172,11 @@ int main(void)
         wol_init();
 	#endif //USE_WOL
     
-//    #if USE_MAIL
-//        mail_client_init();
-//	#endif //USE_MAIL  
+/*
+    #if USE_MAIL
+        mail_client_init();
+	#endif //USE_MAIL  
+*/
 		
 	while(1)
 	{
@@ -193,9 +200,11 @@ int main(void)
 		}
 		
         //Wetterdaten empfangen (Testphase)
-        #if GET_WEATHER
+/*      
+ 		#if GET_WEATHER
         http_request ();
-        #endif
+        #endif	
+*/
         
         //Empfang von Zeitinformationen
 		#if USE_NTP
@@ -206,13 +215,15 @@ int main(void)
 		#endif //USE_NTP
 		
         //Versand von E-Mails
-  /*      #if USE_MAIL
+/*
+	    #if USE_MAIL
         if (mail_enable == 1)
         {
             mail_enable = 0;
             mail_send();
         }
-        #endif //USE_MAIL	*/
+        #endif //USE_MAIL	
+*/
         
         //Rechner im Netzwerk aufwecken
         #if USE_WOL
@@ -232,7 +243,7 @@ int main(void)
         #endif //USE_DHCP
   
 		//USART Daten für Telnetanwendung?
-		telnetd_send_data();
+//		telnetd_send_data();
         
         if(ping.result)
         {
