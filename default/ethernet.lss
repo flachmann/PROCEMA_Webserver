@@ -380,8 +380,8 @@ Disassembly of section .text:
      e53:	75 73 2e 68 74 6d 22 3e 53 74 61 74 75 73 3c 2f     us.htm">Status</
      e63:	61 3e 3c 2f 64 69 76 3e 0d 0a 3c 64 69 76 20 69     a></div>..<div i
      e73:	64 3d 22 6d 61 69 6e 22 3e 0d 0a 43 6f 6d 70 69     d="main">..Compi
-     e83:	6c 69 65 72 74 20 61 6d 20 4e 6f 76 20 20 32 20     liert am Nov  2 
-     e93:	32 30 31 30 20 75 6d 20 31 38 3a 35 37 3a 30 30     2010 um 18:57:00
+     e83:	6c 69 65 72 74 20 61 6d 20 4e 6f 76 20 20 33 20     liert am Nov  3 
+     e93:	32 30 31 30 20 75 6d 20 31 31 3a 30 38 3a 35 39     2010 um 11:08:59
      ea3:	3c 62 72 3e 3c 62 72 3e 0d 0a 43 6f 6d 70 69 6c     <br><br>..Compil
      eb3:	69 65 72 74 20 6d 69 74 20 47 43 43 20 56 65 72     iert mit GCC Ver
      ec3:	73 69 6f 6e 20 34 2e 33 2e 33 3c 62 72 3e 3c 62     sion 4.3.3<br><b
@@ -683,45 +683,45 @@ Disassembly of section .text:
 00001e8a <__c.2015>:
     1e8a:	50 4f 53 54 00                                      POST.
 
-00001e8f <__c.1882>:
+00001e8f <__c.1878>:
     1e8f:	47 65 74 20 50 4f 4e 47 3a 20 25 69 2e 25 69 2e     Get PONG: %i.%i.
     1e9f:	25 69 2e 25 69 0d 0a 00                             %i.%i...
 
-00001ea7 <__c.1880>:
+00001ea7 <__c.1876>:
     1ea7:	45 52 52 4f 52 0d 0a 0d 0a 00                       ERROR.....
 
-00001eb1 <__c.1878>:
+00001eb1 <__c.1874>:
     1eb1:	52 65 61 64 79 0d 0a 0d 0a 00                       Ready.....
 
-00001ebb <__c.1876>:
+00001ebb <__c.1872>:
     1ebb:	0d 0a 00                                            ...
 
-00001ebe <__c.1874>:
+00001ebe <__c.1870>:
     1ebe:	4e 54 50 20 45 72 72 2e 0d 0a 00                    NTP Err....
 
-00001ec9 <__c.1869>:
+00001ec9 <__c.1865>:
     1ec9:	47 57 20 20 20 25 31 69 2e 25 31 69 2e 25 31 69     GW   %1i.%1i.%1i
     1ed9:	2e 25 31 69 0d 0a 00                                .%1i...
 
-00001ee0 <__c.1867>:
+00001ee0 <__c.1863>:
     1ee0:	4d 41 53 4b 20 25 31 69 2e 25 31 69 2e 25 31 69     MASK %1i.%1i.%1i
     1ef0:	2e 25 31 69 0d 0a 00                                .%1i...
 
-00001ef7 <__c.1865>:
+00001ef7 <__c.1861>:
     1ef7:	0d 0a 49 50 20 20 20 25 31 69 2e 25 31 69 2e 25     ..IP   %1i.%1i.%
     1f07:	31 69 2e 25 31 69 0d 0a 00                          1i.%1i...
 
-00001f10 <__c.1860>:
+00001f10 <__c.1856>:
     1f10:	43 6f 6d 70 69 6c 69 65 72 74 20 6d 69 74 20 47     Compiliert mit G
     1f20:	43 43 20 56 65 72 73 69 6f 6e 20 34 2e 33 2e 33     CC Version 4.3.3
     1f30:	0d 0a 00                                            ...
 
-00001f33 <__c.1858>:
+00001f33 <__c.1854>:
     1f33:	43 6f 6d 70 69 6c 69 65 72 74 20 61 6d 20 4e 6f     Compiliert am No
-    1f43:	76 20 20 32 20 32 30 31 30 20 75 6d 20 31 38 3a     v  2 2010 um 18:
-    1f53:	35 37 3a 30 31 0d 0a 00                             57:01...
+    1f43:	76 20 20 33 20 32 30 31 30 20 75 6d 20 31 31 3a     v  3 2010 um 11:
+    1f53:	30 39 3a 30 30 0d 0a 00                             09:00...
 
-00001f5b <__c.1856>:
+00001f5b <__c.1852>:
     1f5b:	0a 0d 53 79 73 74 65 6d 20 52 65 61 64 79 0a 0d     ..System Ready..
 	...
 
@@ -5210,10 +5210,10 @@ int main(void)
     3bd0:	0e 94 95 1d 	call	0x3b2a	; 0x3b2a <httpd_init>
 	telnetd_init();
     3bd4:	0e 94 7f 2e 	call	0x5cfe	; 0x5cfe <telnetd_init>
-	lcd_clear();
 	back_light = 1;
 	lcd_print(0,0,"System Ready");
-	#endif
+	#endif	*/
+
 	//Ethernetcard Interrupt enable
 	ETH_INT_ENABLE;
     3bd8:	ea 9a       	sbi	0x1d, 2	; 29

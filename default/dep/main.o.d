@@ -15,10 +15,9 @@ main.o: ../main.c e:/winavr-20100110/lib/gcc/../../avr/include/avr/io.h \
   e:\winavr-20100110\bin\../lib/gcc/avr/4.3.3/include/stddef.h \
   e:/winavr-20100110/lib/gcc/../../avr/include/avr/pgmspace.h \
   e:/winavr-20100110/lib/gcc/../../avr/include/avr/interrupt.h \
-  ../networkcard/../config.h ../networkcard/../usart.h \
-  ../networkcard/rtl8019.h ../stack.h ../timer.h ../wol.h ../httpd.h \
-  ../cmd.h ../telnetd.h ../ntp.h ../base64.h ../http_get.h ../lcd.h \
-  ../udp_lcd.h ../analog.h ../sendmail.h \
+  ../networkcard/../config.h ../networkcard/../usart.h ../stack.h \
+  ../timer.h ../wol.h ../httpd.h ../cmd.h ../telnetd.h ../ntp.h \
+  ../base64.h ../http_get.h ../analog.h \
   e:/winavr-20100110/lib/gcc/../../avr/include/avr/eeprom.h ../dhcpc.h \
   ../dnsc.h
 
@@ -64,8 +63,6 @@ e:/winavr-20100110/lib/gcc/../../avr/include/avr/interrupt.h:
 
 ../networkcard/../usart.h:
 
-../networkcard/rtl8019.h:
-
 ../stack.h:
 
 ../timer.h:
@@ -84,13 +81,7 @@ e:/winavr-20100110/lib/gcc/../../avr/include/avr/interrupt.h:
 
 ../http_get.h:
 
-../lcd.h:
-
-../udp_lcd.h:
-
 ../analog.h:
-
-../sendmail.h:
 
 e:/winavr-20100110/lib/gcc/../../avr/include/avr/eeprom.h:
 

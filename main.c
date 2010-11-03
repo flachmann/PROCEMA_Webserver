@@ -26,7 +26,7 @@
 #include "config.h"
 #include "usart.h"
 #include "networkcard/enc28j60.h"
-#include "networkcard/rtl8019.h"
+//#include "networkcard/rtl8019.h"
 #include "stack.h"
 #include "timer.h"
 #include "wol.h"
@@ -36,12 +36,12 @@
 #include "ntp.h"
 #include "base64.h"
 #include "http_get.h"
-#include "lcd.h"
-#include "udp_lcd.h"
+//#include "lcd.h"
+//#include "udp_lcd.h"
 #include "analog.h"
 //#include "camera/cam.h"
 //#include "camera/servo.h"
-#include "sendmail.h"
+//#include "sendmail.h"
 #include <avr/eeprom.h>
 
 #include "dhcpc.h"
@@ -72,6 +72,8 @@ int main(void)
     usart_write("Compiliert am "__DATE__" um "__TIME__"\r\n");
     usart_write("Compiliert mit GCC Version "__VERSION__"\r\n");
 
+
+	//wasn das hier?
 	for(a=0;a<1000000;a++){asm("nop");};
 
 	//Applikationen starten
@@ -80,13 +82,14 @@ int main(void)
 	telnetd_init();
 	
 	//Spielerrei mit einem LCD
-	#if USE_SER_LCD
+/*	#if USE_SER_LCD
 	udp_lcd_init();
 	lcd_init();
 	lcd_clear();
 	back_light = 1;
 	lcd_print(0,0,"System Ready");
-	#endif
+	#endif	*/
+
 	//Ethernetcard Interrupt enable
 	ETH_INT_ENABLE;
 	
@@ -164,9 +167,9 @@ int main(void)
         wol_init();
 	#endif //USE_WOL
     
-    #if USE_MAIL
-        mail_client_init();
-	#endif //USE_MAIL  
+//    #if USE_MAIL
+//        mail_client_init();
+//	#endif //USE_MAIL  
 		
 	while(1)
 	{
@@ -203,13 +206,13 @@ int main(void)
 		#endif //USE_NTP
 		
         //Versand von E-Mails
-        #if USE_MAIL
+  /*      #if USE_MAIL
         if (mail_enable == 1)
         {
             mail_enable = 0;
             mail_send();
         }
-        #endif //USE_MAIL
+        #endif //USE_MAIL	*/
         
         //Rechner im Netzwerk aufwecken
         #if USE_WOL

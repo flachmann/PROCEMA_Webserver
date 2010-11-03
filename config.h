@@ -28,7 +28,7 @@
 	//ETH_M32_EX (www.ulrichradig.de)
 	#define USE_ENC28J60	1
 	//Holger Buss (www.mikrocontroller.com) Mega32-Board
-	#define USE_RTL8019		0
+//	#define USE_RTL8019		0
 	
 	//Konfiguration der PORTS (HEX)
 	//1=OUTPUT / 0=INPUT
